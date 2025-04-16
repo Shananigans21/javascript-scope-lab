@@ -2,29 +2,29 @@
 console.log ("Welcome to Flatburger");
 
 // Step 1: Global Scope
-let burgers =["Hamburger", "Cheeseburger"];
-let featuredDrinks = ['Strawberry Milkshake']
+const burgers =["Hamburger", "Cheeseburger"];
+const featuredDrinks = 'Strawberry Milkshake'
   
 // Step 2: Function and Function scope
  function addBurger () {
- let newBurger = "Flatburger"; //function-scoped
-    burgers.push(newBurger);
+ const newBurger = "Flatburger"; //function-scoped
+    burgers.push(newBurger); //Adds "Flatburger" to the burgers array
  }
 
 // Step 3: Block scope
 if(true) {
-    let anothernewBurger = "Maple Bacon Burger";
-    burgers.push(anothernewBurger);
+    const anothernewBurger = "Maple Bacon Burger";
+    burgers.push(anothernewBurger); //Adds "Maple Bacon Burger" to the burgers array
 
     // Step 4: Function to change the featured drinks
     function changeFeatureDrinks () {
-        featuredDrinks = ("The JavaShake");
+        console.log ("Featured drink changed to The JavaShake"); //Example of a function
     }
 }
-
-console.log(burgers);
-addBurger();
-console.log(burgers);
-console.log(featuredDrinks);
-changeFeatureDrinks();
-console.log(featuredDrinks);
+// Testing the functions
+console.log(burgers); // ["Hamburger", "Cheeseburger"]
+addBurger(); // Adds "Flatburger" to the burgers array
+console.log(burgers); // ["Hamburger", "Cheeseburger","Flatburger"]
+console.log(featuredDrinks); // 'Strawberry Milkshake'
+changeFeatureDrinks(); // Calls the function to change featured drink
+console.log(featuredDrinks); //"The JavaShake" 
